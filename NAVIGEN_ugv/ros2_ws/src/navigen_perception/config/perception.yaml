@@ -1,0 +1,9 @@
+traversability_node:
+  ros__parameters:
+    backend: mock              # mock | onnx  (onnx from Phase 7 on)
+    model_path: ""             # e.g. /home/ugv/NAVIGEN/NAVIGEN_ugv/models/traversability.onnx
+    inference_width: 320       # Raspberry Pi 5 friendly default
+    inference_height: 240
+    publish_debug: true
+    # model class index -> NAVIGEN id (0 UNKNOWN, 1 TRAVERSABLE, 2 NON_TRAVERSABLE, 3 OBSTACLE)
+    class_map: [0, 1, 2, 3]

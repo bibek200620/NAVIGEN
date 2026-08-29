@@ -1,0 +1,14 @@
+safety_supervisor:
+  ros__parameters:
+    rate_hz: 20.0
+    max_linear_velocity: 0.4       # conservative demo speed cap [m/s]
+    max_angular_velocity: 1.0      # [rad/s]
+    cmd_timeout_s: 0.5
+    telemetry_timeout_s: 0.6
+    camera_timeout_s: 1.0
+    slam_timeout_s: 1.0
+    ultrasonic_emergency_distance: 0.35   # [m]
+    ultrasonic_consecutive_readings: 3    # debounce against single noisy readings
+    require_telemetry: false   # -> true in Phase 5 (real hardware)
+    require_camera: false      # -> true in Phase 7
+    require_slam: false        # -> true in Phase 8
