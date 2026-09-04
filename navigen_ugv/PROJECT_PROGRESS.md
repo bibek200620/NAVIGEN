@@ -311,3 +311,6 @@ buck converter is part of this next action.
 - Physical result still needs to be observed after resetting the board with motor power connected:
   record whether the left and right channel steps move. If the right step is dead, inspect ENB,
   IN3/IN4, OUT3/OUT4 wiring, right-motor connections, and then the L298N channel B.
+- Remapped the diagnostic input test to isolate GPIO wiring: left `IN1/IN2` now use D5/D6,
+  right `IN3/IN4` now use D1/D2, and D7 controls ENB. The remapped diagnostic was built and
+  uploaded successfully to the replacement ESP8266 at `/dev/cu.usbserial-10`.

@@ -12,11 +12,12 @@
 // ---- One L298N, both motors on each side wired in parallel ----
 // Keep the L298N ENA and ENB jumpers INSTALLED. PWM is applied to one direction
 // input at a time, reducing the NodeMCU motor interface from six GPIOs to four.
-// NodeMCU label -> ESP8266 GPIO: D1=5, D2=4, D5=14, D6=12.
-#define PIN_MOTOR_LEFT_A         5  // D1 -> IN1
-#define PIN_MOTOR_LEFT_B         4  // D2 -> IN2
-#define PIN_MOTOR_RIGHT_A       14  // D5 -> IN3
-#define PIN_MOTOR_RIGHT_B       12  // D6 -> IN4
+// Diagnostic remap: left uses D5/D6 and right uses D1/D2. This deliberately
+// swaps the original input groups to isolate GPIO wiring from channel-B faults.
+#define PIN_MOTOR_LEFT_A        14  // D5 -> IN1
+#define PIN_MOTOR_LEFT_B        12  // D6 -> IN2
+#define PIN_MOTOR_RIGHT_A        5  // D1 -> IN3
+#define PIN_MOTOR_RIGHT_B        4  // D2 -> IN4
 #define PIN_MOTOR_LEFT_ENABLE   -1  // ENA jumper installed; no GPIO used
 #define PIN_MOTOR_RIGHT_ENABLE  13  // D7 -> ENB (remove ENB jumper)
 #define MOTOR_LEFT_INVERTED      0
