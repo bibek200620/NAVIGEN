@@ -314,3 +314,7 @@ buck converter is part of this next action.
 - Remapped the diagnostic input test to isolate GPIO wiring: left `IN1/IN2` now use D5/D6,
   right `IN3/IN4` now use D1/D2, and D7 controls ENB. The remapped diagnostic was built and
   uploaded successfully to the replacement ESP8266 at `/dev/cu.usbserial-10`.
+- Uploaded the user's standalone Motor-B sketch as the temporary `channel_b_test` PlatformIO
+  environment. It directly drives D1/D2 and holds D7 HIGH, repeating forward/stop/reverse/stop.
+  This test intentionally bypasses the normal ROS/watchdog firmware and must only be run with
+  lifted wheels and supervised motor power.
